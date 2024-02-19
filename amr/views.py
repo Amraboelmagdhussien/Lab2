@@ -3,7 +3,7 @@ from .models import Student
 from amr.models import users, Student
 
 # Create your views here.
-# /* _______________Changed_______________ */
+
 def home(request):
     if not request.session.get('user_email') or not request.session.get('userpass'):
         return render(request, 'amr/signup.html')

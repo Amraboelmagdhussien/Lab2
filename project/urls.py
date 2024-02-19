@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# /* _______________Changed_______________ */
+
 from amr.views import accept_user, signin, signup,logout, create_std, create_user, home, showdata ,delete_student, edit_student, about,contact
 
 urlpatterns = [

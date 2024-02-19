@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-# /* _______________Changed_______________ *
+
 class users(models.Model):
     F_name=models.CharField(max_length=50)
     L_name=models.CharField(max_length=50)

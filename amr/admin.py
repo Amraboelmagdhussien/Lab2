@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-# /* _______________Changed_______________ *
+
 from .models import users,Student
 # Register your models here.
 

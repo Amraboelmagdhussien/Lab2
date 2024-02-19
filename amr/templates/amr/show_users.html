@@ -1,0 +1,94 @@
+{% extends 'base.html' %} {% block 'body' %}
+<style>
+  /* Custom styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #04aa6d;
+    color: white;
+  }
+
+  tr:hover {
+    background-color: #f2f2f2;
+  }
+
+  td:last-child {
+    text-align: center;
+  }
+
+  .delete-btn,
+  .update-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  .update-btn {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .delete-btn:hover,
+  .update-btn:hover {
+    background-color: #c82333;
+  }
+</style>
+
+<h2 style="text-align: center">Student Table</h2>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Age</th>
+    <th>Delete</th>
+    <th>Update</th>
+  </tr>
+  {% for std in students %}
+  <tr>
+    <td>{{ std.id }}</td>
+    <td>{{ std.s_name }}</td>
+    <td>{{ std.S_Email }}</td>
+    <td>{{ std.Age }}</td>
+    <td>
+      <a href="{% url 'delete_student' std.id %}">Delete</a>
+    </td>
+    <td>
+      <a href="{% url 'edit_student' std.id %}">Edit</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
